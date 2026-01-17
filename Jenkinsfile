@@ -9,5 +9,11 @@ pipeline {
                     url: 'https://github.com/Houssemaskri/CrudEtudiant'
             }
         }
+
+        stage('build') {
+            steps {
+                nvm compile
+            }
+        }
     }
 }
