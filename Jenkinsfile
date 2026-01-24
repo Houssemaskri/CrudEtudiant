@@ -26,7 +26,7 @@ pipeline {
                       -Dsonar.token=$SONAR_TOKEN
                     """
 
-                
+                }
             }
         }
     }
