@@ -8,16 +8,19 @@ pipeline {
                     url: 'https://github.com/Houssemaskri/CrudEtudiant'
             }
         }
+
+        stage('Clean') {
+            steps {
+                sh 'mvn clean verify'
+            }
+        }
+        
         stage('build') {
             steps {
                 sh 'mvn compile'
             }
         }
-        stage('Unit Tests') {
-            steps {
-                sh 'mvn test'
-            }
-        }
+        
         stage('MVN SONARQUBE') {
             steps {
                 withCredentials([string(credentialsId: 'sonar-token', variable: 'SONAR_TOKEN')]) {
