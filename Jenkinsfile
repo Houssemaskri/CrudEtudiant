@@ -25,6 +25,7 @@ pipeline {
                       mvn sonar:sonar \
                       -Dsonar.host.url=http://192.168.33.10:9000/ \
                       -Dsonar.token=$SONAR_TOKEN \
+                      -Dsonar.junit.reportPaths=target/surefire-reports \
                       -Dsonar.coverage.jacoco.xmlReportPaths=target/site/jacoco/jacoco.xml
                     """
                 }
