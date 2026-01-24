@@ -3,6 +3,7 @@ package tn.esprit.spring.crudetudiant.services;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
 import tn.esprit.spring.crudetudiant.entities.Etudiant;
 import tn.esprit.spring.crudetudiant.entities.Option;
 
@@ -10,10 +11,10 @@ import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+@SpringBootTest  // ADD THIS - loads Spring context
 class EtudiantServiceImplTest {
 
-
-
+    @Autowired  // ADD THIS - injects the service
     private EtudiantServiceImpl etudiantService;
 
     private Etudiant etudiant;
@@ -34,8 +35,6 @@ class EtudiantServiceImplTest {
 
         assertNotNull(list);
         assertFalse(list.isEmpty());
-
-
     }
 
     @Test
